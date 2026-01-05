@@ -22,11 +22,33 @@ Analizar el comportamiento de las transacciones fraudulentas para identificar pa
 * El fraude representa una proporción muy pequeña del total de transacciones.
 * A pesar de su baja frecuencia, tiene impacto económico.
  
-  # Análisis temporal :
+ # Análisis temporal :
   
 * El fraude no se distribuye de forma homogénea en el tiempo.
 * Se identificaron bloques horarios con mayor concentración de fraudes.
 * El análisis de la tasa de fraude (%) permitió detectar periodos de mayor riesgo relativo.
+
+# Análisis económico: 
+
+* El ticket promedio de las transacciones fraudulentas difiere del ticket promedio general.
+* Esto sugiere estrategias distintas en el comportamiento del fraude.
+---
+## Herramientas utilizadas: 
+
+* SQL Server Management Studio
+* Power BI (DAX y visualización)
+---
+## Principales insights 
+
+* El fraude es poco frecuente, pero con impacto económico real.
+* Existen periodos temporales con mayor concentración y mayor tasa relativa de fraude.
+* El comportamiento económico del fraude difiere del de las transacciones legítimas.
+* El análisis descriptivo permite identificar patrones útiles para la gestión del riesgo.
+---
+## Conclusión
+
+Este proyecto demuestra cómo, a partir de un análisis descriptivo y exploratorio, es posible comprender el comportamiento del fraude y generar insights relevantes para el negocio. El enfoque combina consultas SQL para la exploración de datos con Power BI para la comunicación visual de resultados.
+
 
 
 
