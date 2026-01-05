@@ -19,8 +19,15 @@ Analizar el comportamiento de las transacciones fraudulentas para identificar pa
 ## Analisis exploratorio de datos 
   # Volumen y proporcion:
   
-	* El fraude representa una proporción muy pequeña del total de transacciones.
-  * A pesar de su baja frecuencia, tiene impacto económico.
+*El fraude representa una proporción muy pequeña del total de transacciones.
+*A pesar de su baja frecuencia, tiene impacto económico.
+ 
+  # Análisis temporal :
+  
+*El fraude no se distribuye de forma homogénea en el tiempo.
+*Se identificaron bloques horarios con mayor concentración de fraudes.
+*El análisis de la tasa de fraude (%) permitió detectar periodos de mayor riesgo relativo.
+
 
 
 
