@@ -1,0 +1,47 @@
+SELECT
+    is_fraud,
+    COUNT(*) AS total
+FROM fact_transactions
+GROUP BY is_fraud;
+
+SELECT
+    time_seconds / 3600 AS hour_block,
+    COUNT(*) AS total_transacciones,
+    SUM(CASE WHEN class = 1 THEN 1 ELSE 0 END) AS fraudes
+FROM fact_transactions
+GROUP BY time_seconds / 3600
+ORDER BY fraudes DESC;
+
+SELECT
+    SUM(amount) AS monto_total,
+    SUM(CASE WHEN class = 1 THEN amount ELSE 0 END) AS monto_fraude
+FROM fact_transactions;
+
+SELECT
+    MIN(amount) AS min_amount,
+    AVG(amount) AS avg_amount,
+    MAX(amount) AS max_amount,
+    STDEV(amount) AS std_amount
+FROM fact_transactions;
+
+SELECT *
+FROM fact_transactions
+WHERE amount >
+(
+    SELECT AVG(amount) + 3 * STDEV(amount)
+    FROM fact_transactions
+
+    SELECT
+    class,
+    COUNT(*) AS total
+FROM fact_transactions
+WHERE amount >
+(
+    SELECT AVG(amount) + 3 * STDEV(amount)
+    FROM fact_transactions
+)
+GROUP BY class;
+
+SELECT COUNT(*) AS fraudes_testing
+FROM fact_transactions
+WHERE is_fraud = 1 AND amount < 2;
