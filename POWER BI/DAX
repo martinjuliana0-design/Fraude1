@@ -1,0 +1,37 @@
+Total Transacciones = 
+COUNT(fact_transactions[transaction_id])
+
+Total Fraudes = 
+CALCULATE(
+    COUNT(fact_transactions[transaction_id]),
+    fact_transactions[class] = 1
+)
+
+Ticket Promedio Fraude = 
+CALCULATE(
+    AVERAGE(fact_transactions[amount]),
+    fact_transactions[class] = 1
+)
+Ticket Promedio = 
+AVERAGE(fact_transactions[amount])
+
+Monto Total = 
+SUM(fact_transactions[amount])
+
+Monto Fraude = 
+CALCULATE(
+    SUM(fact_transactions[amount]),
+    fact_transactions[class] = 1
+)
+
+% Fraude por Hora = 
+DIVIDE(
+    CALCULATE(
+        COUNT(fact_transactions[transaction_id]),
+        fact_transactions[class] = 1
+    ),
+    COUNT(fact_transactions[transaction_id])
+)
+
+% Fraude = 
+DIVIDE([Total Fraudes], [Total Transacciones])
